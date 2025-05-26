@@ -47,6 +47,13 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
+
 	<false/>
+		<key>UIAppFonts</key>
+<array>
+    <string>MaterialCommunityIcons.ttf</string>
+    <string>FontAwesome.ttf</string>
+    <string>Ionicons.ttf</string>
+</array>
 </dict>
 </plist>
