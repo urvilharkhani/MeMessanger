@@ -1,98 +1,136 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 💬 React Native Messenger App
 
-# Getting Started
+A full-featured React Native chat app with support for group and individual messages, emoji input, image attachments, editable messages, and persistent storage — all styled like WhatsApp.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Getting Started
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### ✅ Requirements
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- Node.js  
+- React Native CLI  
+- Android Studio or Xcode  
+- Android SDK (API Level 33 or above)
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
+## 📦 Install Dependencies
+
+Install all required dependencies using:
+
+```bash
+npm install
 ```
 
-## Step 2: Build and run your app
+### Required Packages
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- `@react-native-async-storage/async-storage` – local storage
+- `@react-navigation/native`
+- `@react-navigation/native-stack`
+- `react-native-vector-icons`
+- `react-native-gesture-handler`
+- `react-native-safe-area-context`
+- `react-native-screens`
+- `react-native-reanimated`
+- `react-native-image-picker`
+- `react-native-emoji-selector`
 
-### Android
+---
 
-```sh
-# Using npm
-npm run android
+### 🛠 Helpful Resources
 
-# OR using Yarn
-yarn android
+- [React Native Environment Setup](https://reactnative.dev/docs/environment-setup)  
+- [React Navigation Setup](https://reactnavigation.org/docs/getting-started)  
+- [AsyncStorage on Medium](https://medium.com/tag/react-native)
+
+---
+
+## ▶️ Running the App
+
+### For Android
+
+```bash
+npx react-native run-android
 ```
 
-### iOS
+### For iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+npx react-native run-ios
 ```
 
-Then, and every time you update your native dependencies, run:
+Ensure you have an emulator or physical device connected.
 
-```sh
-bundle exec pod install
+---
+
+## 🧠 Project Structure
+
+```plaintext
+src/
+│
+├── assets/
+│   └── images/
+│       └── group.png
+│
+├── data/
+│   ├── contacts.js         # Default contact data
+│   └── users.js            # Dummy users used in groups
+│
+├── screens/
+│   ├── HomeScreen.js       # Main screen with contact and group list
+│   └── MessageScreen.js    # Chat UI and logic for individual or group
+│
+├── AppNavigator.js         # Stack navigator config
+
+App.js                      # Root of the app
+package.json
+README.md
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---
 
-```sh
-# Using npm
-npm run ios
+## ✨ Features
 
-# OR using Yarn
-yarn ios
-```
+- 👥 View and chat with contacts and groups  
+- ➕ Create new group chats with dummy users  
+- 📝 Long-press to rename or delete any contact or group  
+- 🖼 Attach and send images from gallery  
+- 🧽 Edit your own message (within 30 min)  
+- 😄 Add emojis with emoji selector  
+- ℹ️ View group info like name, members, and description  
+- 💾 Persist all messages using AsyncStorage  
+- 🟢 Show system messages like "Group Created" (styled like WhatsApp)
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 💡 UX & Design Notes
 
-## Step 3: Modify your app
+- Uses `SafeAreaView` to handle iOS notches  
+- `KeyboardAvoidingView` adjusts input bar for both platforms  
+- WhatsApp-style message bubbles with timestamps  
+- Custom modals for creating groups or editing names  
+- Attached images display inline in chat  
+- Centered system messages styled in WhatsApp green
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🧪 Testing Tips
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+- Test message editing (only works for 30 minutes after sending)  
+- Test image attachment from your gallery  
+- Try creating and deleting multiple groups  
+- Long press on a chat to rename or delete it  
+- View member info in a group using the info icon (ℹ️)
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+---
+## 🙌 Developer
 
-## Congratulations! :tada:
+**Name:** Urvil Harkhani
+**Student ID:** 1271198
+**Course:** COMP5450 Mobile Programming  
+**Instructor:** Dr. Sabah Mohammed
 
-You've successfully run and modified your React Native App. :partying_face:
+## 🙌 Credits
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# MeMessanger
+Built using React Native for learners looking to build chat UIs with clean design and offline storage. No backend, just local data and love.
